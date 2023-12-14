@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad&display=swap');
+:root {
+    --primarycolor1: #6251a2;
+    --primarycolor2: #d35b3b;
+  
+    --secondarycolor1: #edebed;
+    --secondarycolor2: #bf8c66;
+    --secondarycolor3: #292d3b;
+  
+    --primaryBackgroundColor: #d9d9d9;
+    --secondaryBackgroundColor: #cccccc;
+  }
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Afacad', sans-serif;
+    background-color: var(--secondarycolor3);
+}
+.navbar.navbar-expand-sm.navbar-dark {
+    width: 100vw;
+    z-index: 20;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    background: linear-gradient(rgb(200, 200, 200), rgb(0, 0, 0, 0));
+    border: 0;
+  
+    .navbar-brand {
+      width: 20vw;
+  
+      img {
+        width: 100%;
+      }
+    }
+  
+    .collapse.navbar-collapse {
+      ul.navbar-nav {
+        li.nav-item {
+          a.nav-link {
+            color: var(--primarycolor1);
+            text-decoration: none;
+            list-style-type: none;
+            font-weight: 600;
+          }
+        }
+      }
+  
+      div {
+        width: 10%;
+        display: flex;
+        justify-content: space-between;
+  
+        i {
+          color: var(--primarycolor1);
+          font-weight: 600;
+        }
+        .nav-item:hover,
+        i:hover {
+          cursor: pointer;
+          color: var(--primarycolor2);
+          font-weight: 0;
+        }
+      }
+    }
+  }
+.title{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    margin-top: 4em;
+    h1{
+        font-weight: 700;
+        font-size: 2em;
+    }
+    hr{
+        height: 1px;
+        width: 50vw;
+        border: 2px solid #000000;
+    }
+}
+.chat-section{
+    width: 50vw;
+    height: 100vh;
+    margin-bottom: 2em;
+    min-width: 300px;
+    
+    .chat-interface{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        div{
+            margin-top: 5px;
+        }
+        .own-message{
+            text-align: end;
+            width: 95%;
+            background-color: #005d4b;
+            color: #e8f3f9;
+            h6{
+                color: #c5ced3;
+                font-size: 0.8em;
+            }
+        }
+        .database-message{
+            background-color: #1f2c34;
+            color: #e8f3f9;
+            width: 95%;
+            min-height: 40px;
+        }
+    }
+    .input-area{
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        #form-message{
+            width: 100%;
+            display: flex;
+            gap: 5px;
+            input{
+                width: 80%;
+                height: 30px;
+                border: 0;
+                background-color: #646679;
+                color: #b4b5c1;
+                border-radius: 20px;
+                display: flex;
+                align-items: center; 
+                font-size: 1.2em;
+            }
+            button{
+                background-color: #3aad53;
+                border-radius: 20px;
+                color: #ffffff;
+                width: 20%;
+                height: 30px;
+                margin-left: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    font-size: 1.2em;
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+
+textarea{
+    width: 100%;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .chat-section{
+        width: 100vw;
+    }
+    .input-area{
+        margin-top: auto;
+    }
+    .title{
+        hr{
+            width: 90vw;
+        }
+    }
+    
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .chat-section{
+        width: 60vw;
+        height: 80dvh;
+    }
+    .title{
+        hr{
+            width: 60vw;
+        }
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .chat-section{
+        width: 50vw;
+    }
+    .title{
+        hr{
+            width: 50vw;
+        }
+    }
+    
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .chat-section{
+        width: 45vw;
+    }
+    .title{
+        hr{
+            width: 45vw;
+        }
+    }
+    
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .chat-section{
+        width: 40vw;
+    }
+    .title{
+        hr{
+            width: 45vw;
+        }
+    }
+    
+  }

@@ -54,7 +54,9 @@ body {
 
       i {
         color: var(--primarycolor1);
-        font-weight: 600;
+        font-weight: 700;
+        margin-left: 5px;
+        font-size: 1.2em;
       }
       .nav-item:hover,
       i:hover {

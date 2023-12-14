@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="css/styles-chat.css" >
+
+    <title>Chat bicycles</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="javascript:void(0)">
+            <img src="imgs/lomotor.png" alt="Img-logo" >
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mynavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-cars.html">ABOUT CARS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="comunity.html">COMUNITY</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <form>
+                <i title="Login" id="user-login" class="fa-regular fa-user"></i>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="title">
+        <h1 class="h1"> LOMOTOR Chat </h1>
+        <hr>
+    </div>
+    <main class="chat-section container">
+            <div class="chat-interface">
+                <div class="sent-messages" id="sent-messages" readonly="true">
+                    <div class="container database-message" > 
+                        <h5>
+                            Assistant 
+                        </h5>
+                        <h5>
+                            ¡Hey car enthusiast! ¿Questions about cars? I'm here to help! 🚗💨 
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="input-area">
+                <form id="form-message">
+                    <input type="text" name="input-field" placeholder="Mensaje">
+                    <button class="submit-btn btn-primary" type="submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+    </main>
+    
+
+    <script
+      src="https://kit.fontawesome.com/41364728e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script type="module" src="js/database.js"></script> -->
+    <script type="module" src="js/firebase-chat.js"></script>
+</body>
+</html>

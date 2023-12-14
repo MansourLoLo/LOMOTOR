@@ -1,4 +1,6 @@
-// Import the functions you need from the SDKs you need
+// This was the first database model for storage the comments from community section
+//But then i realize that is was easier with local storage
+
 import { getDatabase, ref, onValue, push, set } from "./firebase-setup.js";
 
 function initialize() {

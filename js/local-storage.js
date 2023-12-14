@@ -39,12 +39,14 @@ function showAllMessages() {
   let comments_local = window.localStorage.getItem("comments");
   let comments_stringified = JSON.parse(comments_local);
 
-  for (let comment in comments_stringified) {
-    const USERNAME = comments_stringified[comment].name;
-    const DATE = comments_stringified[comment].date;
-    const COMMENT = comments_stringified[comment].comment;
-    const LIKES = comments_stringified[comment].likes;
-    const DISLIKES = comments_stringified[comment].dislikes;
+  let commentsToShow = comments_stringified || comments;
+
+  for (let comment in commentsToShow) {
+    const USERNAME = commentsToShow[comment].name;
+    const DATE = commentsToShow[comment].date;
+    const COMMENT = commentsToShow[comment].comment;
+    const LIKES = commentsToShow[comment].likes;
+    const DISLIKES = commentsToShow[comment].dislikes;
 
     if (USERNAME == USERNAME_LOCAL) {
       SENT_COMMENTS.innerHTML += `
@@ -111,15 +113,15 @@ function showAllMessages() {
       element.addEventListener("click", () => {
         console.log("thumb up nº: " + index);
 
-        comments_stringified[index].likes++;
+        commentsToShow[index].likes++;
 
         window.localStorage.setItem(
           "comments",
-          JSON.stringify(comments_stringified)
+          JSON.stringify(commentsToShow)
         );
 
         LIKES_COMMENT[index].innerHTML = parseInt(
-          comments_stringified[index].likes
+          commentsToShow[index].likes
         );
       });
     });
@@ -128,15 +130,15 @@ function showAllMessages() {
         console.log("thumb down nº: " + index + 1);
         DISLIKES_COMMENT[index].innerHTML++;
 
-        comments_stringified[index].dislikes++;
+        commentsToShow[index].dislikes++;
 
         window.localStorage.setItem(
           "comments",
-          JSON.stringify(comments_stringified)
+          JSON.stringify(commentsToShow)
         );
 
         DISLIKES_COMMENT[index].innerHTML = parseInt(
-          comments_stringified[index].dislikes
+          commentsToShow[index].dislikes
         );
       });
     });
