@@ -121,11 +121,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1em;
   margin-bottom: 1em;
   color: #131417;
   width: 100vw;
 
-  .h1 {
+  h1 {
     margin: 5px;
     font-weight: 700;
   }
