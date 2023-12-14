@@ -1,0 +1,340 @@
+:root {
+  --primarycolor1: #6251a2;
+  --primarycolor2: #d35b3b;
+
+  --secondarycolor1: #edebed;
+  --secondarycolor2: #bf8c66;
+  --secondarycolor3: #292d3b;
+
+  --primaryBackgroundColor: #d9d9d9;
+  --secondaryBackgroundColor: #cccccc;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.navbar.navbar-expand-sm.navbar-dark {
+  width: 100vw;
+  z-index: 20;
+  position: absolute;
+  backdrop-filter: blur(2px);
+  background: linear-gradient(rgb(200, 200, 200), rgb(0, 0, 0, 0));
+  border: 0;
+
+  .navbar-brand {
+    width: 20vw;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .collapse.navbar-collapse {
+    ul.navbar-nav {
+      li.nav-item {
+        a.nav-link {
+          color: var(--primarycolor1);
+          text-decoration: none;
+          list-style-type: none;
+          font-weight: 600;
+        }
+      }
+    }
+
+    div {
+      width: 10%;
+      display: flex;
+      justify-content: space-between;
+
+      i {
+        color: var(--primarycolor1);
+        font-weight: 600;
+      }
+      .nav-item:hover,
+      i:hover {
+        cursor: pointer;
+        color: var(--primarycolor2);
+        font-weight: 0;
+      }
+    }
+  }
+}
+
+button:active {
+  transform: translateY(5px);
+}
+
+main {
+  margin-top: 3em;
+  position: relative;
+  flex: 1;
+}
+.title-comunity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 700;
+  color: var(--secondarycolor3);
+  width: 100vw;
+
+  .h1 {
+    margin: 5px;
+    font-weight: 700;
+  }
+}
+
+.comment-container {
+  display: flex;
+  justify-content: space-around;
+  min-width: 200px;
+  .user-profile {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    background-color: var(--primarycolor1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .h1 {
+      color: var(--primaryBackgroundColor);
+      font-size: 2em;
+    }
+  }
+  .user-comment {
+    width: 70vw;
+    .comment-text-area {
+      width: 100%;
+      #textArea {
+        width: 100%;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px solid #000000;
+        overflow-y: hidden;
+        resize: none;
+      }
+    }
+    .btn-comment {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      margin-top: 1em;
+    }
+  }
+}
+
+.comentary-section {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.users-comments-container {
+  min-width: 200px;
+  height: auto;
+  font-size: 0.8em;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr 0.5fr;
+  grid-template-rows: 0.2fr 1.2fr 0.2fr;
+  gap: 5px;
+
+  .users-profile {
+    grid-area: 1/1 / 2/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    background-color: var(--primarycolor1);
+    .h1 {
+      border-radius: 100%;
+      color: var(--secondarycolor1);
+    }
+  }
+  .user-info {
+    grid-area: 1/2 / 2/-3;
+    display: flex;
+    align-items: center;
+    width: auto;
+    gap: 1em;
+    .h3 {
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+    .h6 {
+      font-size: 0.8rem;
+    }
+  }
+  .user-modifier-container {
+    grid-area: -4/3 / -3/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-comment-container {
+    grid-area: 2/2 / -2/4;
+    height: auto;
+    .content-comment {
+      width: 100%;
+      border: 0;
+      overflow-y: hidden;
+      resize: none;
+    }
+  }
+  .user-interaction {
+    grid-area: 3/2 / -1/-2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: last baseline;
+    gap: 5px;
+    i {
+      font-size: 18px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .edit-comment {
+      cursor: pointer;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      i {
+        margin-left: 2px;
+      }
+      .btn-edit-cancel {
+        background-color: #cf0d0d;
+      }
+      .btn-edit {
+        background-color: #117024;
+      }
+      button {
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        width: 60px;
+        margin: 2px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+    }
+  }
+  .remove-comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: -2/-2 / -1/-1;
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+.container-load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100vw;
+  color: #ffffff;
+  background-color: #131417;
+  margin: 0;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  border-radius: 10px 10px 0 0;
+}
+.contact-section > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.social-medias {
+  width: 50vw;
+  text-align: center;
+}
+.social-media-bar {
+  font-size: 2em;
+}
+.social-media-street-signature img {
+  width: 100%;
+}
+.suscribe {
+  gap: 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 600px) {
+  .navbar-brand {
+    width: 50vw;
+  }
+  .home-section div p {
+    font-size: 1em;
+  }
+  .social-medias {
+    width: 100vw;
+  }
+  .contact-section > div {
+    width: 100vw;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .navbar-brand {
+    div {
+      width: 100vw;
+      font-size: 2rem;
+    }
+  }
+}
+
+/* Medium devices ( tablets, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .suscribe {
+    width: 90vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .nav-bar-list {
+    font-size: 2rem;
+  }
+  .social-medias {
+    width: 40vw;
+  }
+  .social-media-street-signature {
+    width: 100%;
+  }
+  .contact-section > div {
+    width: 30vw;
+  }
+  .title h1 {
+    font-size: 3rem;
+  }
+  .title h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

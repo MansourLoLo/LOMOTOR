@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  perspective: 500px; /* Añade perspectiva al espacio 3D */
+}
+.star {
+  width: 3px;
+  height: 3px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #fff;
+  animation: movimientoEstrellas 2s linear infinite;
+}
+@keyframes movimientoEstrellas {
+  0% {
+    transform: translate3d(0, 0, -500px); /* Estrella lejos en el espacio 3D */
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0); /* Estrella cerca en el espacio 3D */
+    opacity: 1;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2%;
+
+  .logo {
+    width: 350px;
+
+    img {
+      width: 100%;
+    }
+  }
+  .form-container {
+    background-color: rgba(0, 166, 255, 0.162);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 10px;
+    color: #fff;
+
+    div {
+      margin-bottom: 1.5em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      font-family: "Afacad", sans-serif;
+      label {
+        font-weight: 800;
+      }
+      input {
+        height: 30px;
+        margin: 1em;
+        background: transparent;
+        border: 1px solid #ffffff;
+        color: #fff;
+        font: 1em;
+      }
+      .info {
+        color: #ffffff82;
+      }
+      button {
+        width: 20vw;
+        min-width: 100px;
+      }
+    }
+    /* This is the only error, the "ogo" error is because of the nested structure that is new in css */
+    /* If you look closely on the others css, this error only shows in nested structures */
+  }
+}
